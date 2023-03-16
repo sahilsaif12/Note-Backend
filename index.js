@@ -18,6 +18,9 @@ app.use(express.json())
 //available routes
 app.use('/api/auth', require('./routes/auth'))
 app.use('/api/notes', require('./routes/notes'))
+app.use('/', (req,res)=>{
+  res.json({msg:"hello note backend is working"})
+})
 // serve static assets if in production
 if (process.env.NODE_ENV ==='production') {
   // set static folder
